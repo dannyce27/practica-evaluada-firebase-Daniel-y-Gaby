@@ -25,7 +25,7 @@
 
 ## 🎥 Enlace de video demostrativo
 
-
+https://drive.google.com/file/d/1f_KKopmT5v41-JZCmqWAmne0CeL6IFwF/view?usp=sharing
 
 
 
@@ -45,6 +45,7 @@
 | `expo-image-picker`                | ^16.1.4       | Para seleccionar imágenes (si aplica)        |
 | `expo-status-bar`                  | ~2.2.3        | Personalización de la barra de estado        |
 | `react-native-dotenv`              | ^3.4.11       | Para variables de entorno                    |
+
 
 
 
