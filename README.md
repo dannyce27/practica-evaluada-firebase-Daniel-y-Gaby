@@ -14,11 +14,11 @@
 ---
 
 ## Funcionalidades
-Splash screen con verificación de sesión
-Registro de usuarios **nombre, email, contraseña, titulo, año de graduacion**
-Inicio de sesión con Firebase Auth
-Home con información del usuario
-Edición de perfil
+- Splash screen con verificación de sesión
+- Registro de usuarios **nombre, email, contraseña, titulo, año de graduacion**
+- Inicio de sesión con Firebase Auth
+- Home con información del usuario
+- Edición de perfil
 
 ---
 
@@ -44,6 +44,7 @@ Edición de perfil
 | `expo-image-picker`                | ^16.1.4       | Para seleccionar imágenes (si aplica)        |
 | `expo-status-bar`                  | ~2.2.3        | Personalización de la barra de estado        |
 | `react-native-dotenv`              | ^3.4.11       | Para variables de entorno                    |
+
 
 
 
