@@ -4,7 +4,7 @@ import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndP
 
 import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 
-import { auth, db } from '../config/firebaseConfig';
+import { auth, db } from '../config/firebase';
  
 export const useAuth = () => {
 
