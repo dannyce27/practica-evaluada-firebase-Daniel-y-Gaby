@@ -39,7 +39,7 @@ export default function RegisterScreen({ navigation }) {
 
     if (result.success) {
       Alert.alert('Éxito', 'Cuenta creada correctamente');
-      navigation.navigate('Login'); // ✅ Redirige al login después del registro
+      navigation.navigate('login'); 
     } else {
       Alert.alert('Error', result.error);
     }
