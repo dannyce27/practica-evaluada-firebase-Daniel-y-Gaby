@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   linkText: {
-    color: '#007bff',
+    color: '#000000',
     textAlign: 'center',
     fontSize: 14,
     marginTop: 10,

@@ -49,7 +49,7 @@ const SplashScreen = ({ navigation }) => {
       </Animated.Text>
 
       <Animated.Text style={[styles.text, styles.textSecondary, { opacity: text2Opacity }]}>
-        A tu App React Native
+        A tu app informativa Universitaria
       </Animated.Text>
     </Animated.View>
   );

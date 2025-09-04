@@ -30,7 +30,7 @@ const Login = ({ navigation }) => {
 
     if (result.success) {
       Alert.alert('Éxito', 'Sesión iniciada correctamente');
-       navigation.replace('home');
+       navigation.replace('Home');
     } else {
       Alert.alert('Error de Login', result.error);
     }
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   primaryButton: {
-    backgroundColor: '#0288d1',
+    backgroundColor: '#000000',
     height: 50,
     borderRadius: 10,
     justifyContent: 'center',
@@ -141,11 +141,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#0288d1',
+    borderColor: '#000000',
     borderRadius: 10,
     paddingVertical: 12,
   },
-  secondaryButtonText: { color: '#0288d1', fontSize: 16, fontWeight: '600' },
+  secondaryButtonText: { color: '#000000', fontSize: 16, fontWeight: '600' },
 });
 
 export default Login;

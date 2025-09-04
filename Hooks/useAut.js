@@ -5,8 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signOut
 } from 'firebase/auth';
-import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
-
+import { doc, setDoc, getDoc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { auth, database as db } from '../src/config/firebase.js';
 
 export const useAuth = () => {
@@ -14,11 +13,10 @@ export const useAuth = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
       setLoading(false);
     });
-
     return unsubscribe;
   }, []);
 
@@ -59,25 +57,32 @@ export const useAuth = () => {
 
   const getUserData = async () => {
     if (!user) return null;
-
     try {
       const docRef = doc(db, 'users', user.uid);
       const docSnap = await getDoc(docRef);
-
-      return docSnap.exists() ? docSnap.data() : null;
+      return docSnap.exists() ? { uid: user.uid, ...docSnap.data() } : { uid: user.uid, email: user.email, nombre: user.displayName || '' };
     } catch (error) {
       console.error('Error fetching user data:', error);
       return null;
     }
   };
 
+  const subscribeToUserData = (callback) => {
+    if (!user) return () => {};
+    const docRef = doc(db, 'users', user.uid);
+    const unsubscribe = onSnapshot(docRef, (docSnap) => {
+      if (docSnap.exists()) {
+        callback({ uid: user.uid, ...docSnap.data() });
+      }
+    });
+    return unsubscribe;
+  };
+
   const updateUserData = async (data) => {
     if (!user) return { success: false, error: 'No user logged in' };
-
     try {
       const docRef = doc(db, 'users', user.uid);
       await updateDoc(docRef, data);
-
       return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
@@ -92,5 +97,6 @@ export const useAuth = () => {
     logout,
     getUserData,
     updateUserData,
+    subscribeToUserData,
   };
 };

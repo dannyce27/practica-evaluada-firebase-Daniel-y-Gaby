@@ -2,10 +2,11 @@ import { createNativeStackNavigator, CardStyleInterpolators } from '@react-navig
 import { NavigationContainer } from '@react-navigation/native';
 
 import Home from '../screens/Home';
-import Add from '../screens/Add';
+import Add from '../screens/editProfile';
 import Register from '../screens/Register';
 import login from '../screens/login';  // mayúscula inicial
 import SplashScreen from '../screens/SplashScreen';
+import EditProfile from "../screens/editProfile"
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const Navigation = () => {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="login" component={login} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Edit" component={EditProfile}/>
         {/* Si necesitas Add, agrega aquí */}
       </Stack.Navigator>
     </NavigationContainer>
