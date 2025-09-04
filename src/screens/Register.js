@@ -15,16 +15,20 @@ import { useAuth } from '../../Hooks/useAut';
 export default function RegisterScreen({ navigation }) {
   const { register } = useAuth();
   const [loading, setLoading] = useState(false);
+
+  // 🔧 Campos corregidos: titulo, graduacion
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
     password: '',
-    edad: '',
-    especialidad: ''
+    titulo: '',
+    graduacion: ''
   });
 
   const handleRegister = async () => {
-    if (!formData.nombre || !formData.email || !formData.password) {
+    const { nombre, email, password } = formData;
+
+    if (!nombre || !email || !password) {
       Alert.alert('Error', 'Por favor completa todos los campos obligatorios');
       return;
     }
@@ -35,6 +39,7 @@ export default function RegisterScreen({ navigation }) {
 
     if (result.success) {
       Alert.alert('Éxito', 'Cuenta creada correctamente');
+      navigation.navigate('Login'); // ✅ Redirige al login después del registro
     } else {
       Alert.alert('Error', result.error);
     }
@@ -79,16 +84,15 @@ export default function RegisterScreen({ navigation }) {
 
         <TextInput
           style={styles.input}
-          placeholder="Titulo Univerditario"
-          value={formData.edad}
+          placeholder="Título Universitario"
+          value={formData.titulo}
           onChangeText={(text) => updateFormData('titulo', text)}
-          
         />
 
         <TextInput
           style={styles.input}
-          placeholder="Año de grduacion"
-          value={formData.especialidad}
+          placeholder="Año de graduación"
+          value={formData.graduacion}
           onChangeText={(text) => updateFormData('graduacion', text)}
           keyboardType="numeric"
         />
