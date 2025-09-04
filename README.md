@@ -4,12 +4,21 @@
 ## 👥 Estudiantes
 
 - **Nombre:** Gabriela Michelle Perez Portillo
-- **Carnet:** 20200543
+  **Carnet:** 20200543
 
 - **Nombre:** Daniel Rolando Soriano Solis
-- **Carnet:** 20230169
+  **Carnet:** 20230169
 
 
+
+---
+
+## Funcionalidades
+Splash screen con verificación de sesión
+Registro de usuarios **nombre, email, contraseña, titulo, año de graduacion**
+Inicio de sesión con Firebase Auth
+Home con información del usuario
+Edición de perfil
 
 ---
 
@@ -21,7 +30,6 @@
 
 ## 📦 Dependencias utilizadas
 
-Este proyecto fue desarrollado utilizando **Expo** y las siguientes dependencias:
 
 | Paquete                            | Versión       | Descripción                                  |
 |-----------------------------------|---------------|----------------------------------------------|
@@ -36,6 +44,7 @@ Este proyecto fue desarrollado utilizando **Expo** y las siguientes dependencias
 | `expo-image-picker`                | ^16.1.4       | Para seleccionar imágenes (si aplica)        |
 | `expo-status-bar`                  | ~2.2.3        | Personalización de la barra de estado        |
 | `react-native-dotenv`              | ^3.4.11       | Para variables de entorno                    |
+
 
 
 
